@@ -15,28 +15,28 @@
             <div>
                 <label for="" class="mt-5">Name:</label>
                 @error('name')
-                    <div class="error" style="color: red">{{ $message }}</div>
+                    <div class="error">{{ $message }}</div>
                 @enderror
                 <input type="text" class="form-control" placeholder="Full Name" name="name" required value="{{old('name')}}">
             </div>
             <div>
                 <label for="" class="mt-5">Email:</label>
                 @error('email')
-                    <div class="error" style="color: red">{{ $message }}</div>
+                    <div class="error">{{ $message }}</div>
                 @enderror
                 <input type="email" class="form-control" placeholder="Email" name="email" required value="{{old('email')}}">
             </div>
             <div>
                 <label for="" class="mt-5">Password:</label>
                 @error('password')
-                    <div class="error" style="color: red">{{ $message }}</div>
+                    <div class="error">{{ $message }}</div>
                 @enderror
                 <input type="password" class="form-control" placeholder="password" name="password" required>
             </div>
             <div>
                 <label for="" class="mt-5">Confirm Password:</label>
                 @error('confirm_password')
-                    <div class="error" style="color: red">{{ $message }}</div>
+                    <div class="error">{{ $message }}</div>
                 @enderror
                 <input type="password" class="form-control" placeholder="Confirm password" name="confirm_password" required>
             </div>

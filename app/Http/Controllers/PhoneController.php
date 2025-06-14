@@ -99,7 +99,7 @@ class PhoneController extends Controller
 
         return redirect()->route('list.phone');
     }
-
+    
     public function detail(Product $product){
 
         return view('admin.phones.components.detail_phone',compact('product'));

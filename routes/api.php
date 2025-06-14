@@ -62,3 +62,7 @@ Route::post('user',[UserController::class, 'create']);
 Route::put('user/update',[userController::class, 'update']);
 Route::delete('user/destroy',[userController::class, 'destroy']);
 Route::get('user/list',[userController::class, 'list']);
+
+//slideshow api
+Route::put('slideshow/update',[userController::class, 'update']);
+Route::get('slideshow/list',[userController::class, 'list']);

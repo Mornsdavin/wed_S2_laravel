@@ -7,7 +7,7 @@
     </div>
   </nav>
   <div class="w-25">
-    <a href="{{route('register')}}" class="btn btn-success btn-lg w-50 active" role="button" aria-pressed="true">Add Employee</a>
+    <a href="{{route('register')}}" class="btn btn-success btn-lg w-52 active" role="button" aria-pressed="true">Add Employee</a>
   </div>
   <table class="table table-bordered">
     <tr class="text-center">
@@ -48,6 +48,9 @@
     @endforeach
   </table>
 </div>
+
+
+
 
 @endsection()
 

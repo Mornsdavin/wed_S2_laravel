@@ -8,6 +8,8 @@ use App\Http\Controllers\PhoneController;
 use App\Http\Controllers\ProductController;
 use App\Models\Order;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SlideShowController;
+use App\Models\Slideshow;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +30,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/admin/dashboard/dashboard.',[DashboardController::class,'dashboard'])->name('dashboard');
     //admin routes Product
     Route::get('/admin/phone',[PhoneController::class,'list'])->name('list.phone');
-    Route::get('/admin/phone/create',[PhoneController::class,'create'])->name('create.phone');
+    Route::get('/admin/phone/create',[PhoneController::class,'create'])->name(name: 'create.phone');
     Route::post('/admin/phone/store',[PhoneController::class,'store'])->name('store.phone');
     Route::get('/admin/edit/{product}',[PhoneController::class,'edit'])->name('edit.phone');
     Route::put('/admin/update/{id}',[PhoneController::class,'update'])->name('update.phone');
@@ -37,7 +39,9 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/admin/edit_employee/{employee}',[Authenticate::class,'edit'])->name('edit.employee');
     Route::put('/admin/update_employee/{id}',[Authenticate::class,'update'])->name('update.employee');
     Route::delete('/admin/delete/{employee}/',[Authenticate::class,'delete'])->name('delete.employee');
+
 });
+
 
 Route::get('/home',[HomeController::class,'listProducts'])->name('home.list');
 Route::get('/login',[Authenticate::class,'login'])->name('login');
@@ -54,6 +58,7 @@ Route::post('/logout', [Authenticate::class, 'logout'])->name('logout');
 Route::post('/home/order/store/{id}', [OrderController::class, 'store'])->name('order.store');
 Route::get('/home/order/{id}', [PhoneController::class, 'OrderStore'])->name('home.store');
 Route::get('/admin/employee/employeelist', [Authenticate::class, 'list'])->name('employee.list');
+Route::get('/admin/slideshows', [SlideshowController::class, 'index'])->name('slideshows.list');
 
 
 Route::get('/hi',function(){
@@ -75,8 +80,8 @@ Route::get('/admin/employee/components', function () {
     return view('admin.employee.components.add_employee');
 });
 
-Route::get('/admin/about', function(){
-    return view('about.about');
+Route::get('/admin/about/components', function(){
+    return view('about.about.components.add_employee');
 });
 
 Route::get('/about', function(){
@@ -95,8 +100,8 @@ Route::get('/admin/about', function(){
 //     return view('setting.setting');
 // });
 
+
 // Route::get('/admin/dashboard', function(){
 //     return view('admin.dashboard.dashboard');
 // });
-
 

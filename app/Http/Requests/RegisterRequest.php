@@ -32,8 +32,8 @@ class RegisterRequest extends FormRequest
         return[
             'name'   => 'Input your full name',
             'email' => 'Input your email address',
-            'password' => 'Input your new password',
-            'confirm_password' => 'Confirm your password'
+            'password' => 'Password in not match',
+            'confirm_password' => 'Password in not match'
         ];
     }
 }

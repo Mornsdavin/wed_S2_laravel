@@ -68,6 +68,7 @@
     <hr>
     <div class="item p-2 d-flex row row-cols-5 justify-content-center flex-wrap ">
         @foreach ($products as $item)
+        @if ($item->id >= 4)
         <a href="{{route('home.productDetail', ['id'=>$item->id])}}" class="col-sm-3 text-decoration-none m-3 p-3">
             <div class="card p-4" >
                 <div class="d-flex justify-content-center">
@@ -85,6 +86,7 @@
                 </div>
             </div>
         </a>
+        @endif
         @endforeach
     </div>
 </div>

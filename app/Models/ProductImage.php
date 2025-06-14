@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProductImage extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'imgid';
     protected $fillable=[
         'product_id',
         'color_name',
@@ -17,3 +18,4 @@ class ProductImage extends Model
         return $this->belongsTo(Product::class);
     }
 }
+

@@ -22,47 +22,6 @@
 
     </tr>
 
-    @foreach ($products as $product)
-
-      <tr class="text-center">
-        <td>{{$product->id}}</td>
-        <td>{{$product->product_code}}</td>
-        <td >{{$product->product_name}}</td>
-        <td >${{$product->price}}
-        </td>
-        <td>
-          @foreach ($product_imgs as $img)
-                        @if ($product->id == $img->product_id )
-                        <img src="{{ '/assets/' . $img->product_img }}" alt="" width="120px" height="120px">
-                        @endif
-          @endforeach
-        </td>
-
-        <td>
-          <form method="POST" action="{{route('delete.phone',['product'=>$product])}}">
-          {{-- <form method="POST" action=""> --}}
-            @csrf
-            @method('DELETE')
-            <div class="d-flex justify-content-center align-items-center">
-              <a
-                href="{{route('edit.phone',['product'=>$product])}}"
-                {{-- href="" --}}
-                class="text-secondary text-decoration-none "
-              >
-                <img src="/assets/edit.svg"/>
-                Edit
-              </a>
-            <button class="btn btn-block text-secondary">
-              <img src="/assets/delete.svg"/>
-              Delete
-            </button>
-            </div>
-          </form>
-        </td>
-      </tr>
-
-
-    @endforeach
   </table>
 
 

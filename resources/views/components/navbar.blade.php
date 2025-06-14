@@ -39,7 +39,7 @@
                   [
                   "title" => "Setting",
                   "src" => "/assets/setting.png",
-                  "path" => "/admin/setting"
+                  "path" => "#"
                   ],
                   [
                   "title" => "logout",
